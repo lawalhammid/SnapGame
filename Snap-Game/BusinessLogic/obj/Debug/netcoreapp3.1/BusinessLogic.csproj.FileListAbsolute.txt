@@ -1,0 +1,13 @@
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\obj\Debug\netcoreapp3.1\BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\obj\Debug\netcoreapp3.1\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\obj\Debug\netcoreapp3.1\BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\obj\Debug\netcoreapp3.1\BusinessLogic.AssemblyInfo.cs
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\obj\Debug\netcoreapp3.1\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\bin\Debug\netcoreapp3.1\BusinessLogic.deps.json
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\bin\Debug\netcoreapp3.1\BusinessLogic.dll
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\bin\Debug\netcoreapp3.1\BusinessLogic.pdb
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\bin\Debug\netcoreapp3.1\Models.dll
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\bin\Debug\netcoreapp3.1\Models.pdb
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\obj\Debug\netcoreapp3.1\BusinessLogic.csproj.CopyComplete
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\obj\Debug\netcoreapp3.1\BusinessLogic.dll
+C:\Users\USER\Documents\LawalInterviewSchedules\SamClark Recruiter\Snap-Game\BusinessLogic\obj\Debug\netcoreapp3.1\BusinessLogic.pdb
