@@ -13,23 +13,30 @@ namespace BusinessLogic.Services
     /// </summary>
     public class ReturnCardsObjectsService : IReturnCardsObjects
     {
-        private const int TotalNumOfCards = 7;// 52; the standard card number is 52 hard code
+        private const int TotalNumOfCards = 3;// 52; the standard card number is 52 hard code
         public async Task<IEnumerable<CardsInformation>> AllCards()
         {
             var CardsAssign = new List<CardsInformation>();
 
             for (int startCount = 0; startCount < TotalNumOfCards; startCount++)
             {
-                CardsAssign.Add(new CardsInformation { CardNo = startCount + 1, LetterOnCard = await GenerateCardLetter(startCount), CardIconOrImage = await GenerateCardIconOrImage(startCount), IconColor = await GenerateCardColor() });
+                string cardFullInfo = await GenerateCardFullInfo(startCount);
+                char Letter = await GenerateCardLetter(cardFullInfo);
+                CardsAssign.Add(new CardsInformation { CardNo = startCount + 1, LetterOnCard = Letter, CardIconOrImage = cardFullInfo, IconColor = await GenerateCardColor() });
             }
             return CardsAssign;
         }
 
-        public async Task<string> GenerateCardLetter(int index)
+        public async Task<string> GenerateCardFullInfo(int index)
         {
-            string[] names = new string[] { "K", "Q", "K", "A", "J", "A" };//, "7", "8", "9", "10", "J", "Q", "K" };// { "A", "2", "3", "4", "5", "6", "7","8", "9", "10", "J", "Q", "K" };
-           
+            string[] names = new string[] { "King", "Queen", "King" };//, "A", "J", "A" };
+
             return names[index];
+        }
+
+        public async Task<char> GenerateCardLetter(string cardName)
+        {
+            return cardName[0];
         }
 
         public async Task<string> GenerateCardColor()
@@ -40,12 +47,7 @@ namespace BusinessLogic.Services
             return names[index];
         }
 
-        public async Task<string> GenerateCardIconOrImage(int index)
-        {
-            string[] names = new string[] { "King", "Queen", "King", "A", "J", "A" };
-          
-            return names[index];
-        }
+    
 
     }
 }

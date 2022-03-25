@@ -9,7 +9,7 @@ namespace Models
         public string PlayerIdentity { get; set; }
         public string CardDetails { get; set; }
         public int TotalNoOfCards { get; set; }
-        public string LetterOnCard { get; set; }
+        public char LetterOnCard { get; set; }
 
     }
 }
