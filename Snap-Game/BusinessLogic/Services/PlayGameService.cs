@@ -103,8 +103,7 @@ namespace BusinessLogic.Services
 
             foreach (var getCarddetails in assignNoCardsToPlayers)
             {
-                Console.WriteLine($"{getCarddetails.PlayerIdentity}, Please enter { getCarddetails.CardNo } and press enter key  to reveal the  first card at the top of your cards slack. Note: { getCarddetails.CardNo } is the Card No at the top of your cards slack");
-
+                Console.WriteLine($"{getCarddetails.PlayerIdentity}, Please enter { getCarddetails.CardNo } and press enter key  to reveal the  first card at the top of your cards stack. Note: { getCarddetails.CardNo } is the Card No at the top of your cards stack");
 
                 int cardNoTyped = getCarddetails.CardNo;
                

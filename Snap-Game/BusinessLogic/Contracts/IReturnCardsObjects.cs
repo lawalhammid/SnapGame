@@ -10,8 +10,8 @@ namespace BusinessLogic.Contracts
     {
         //I used task incase I changed it to fetch data from database
         Task<IEnumerable<CardsInformation>> AllCards();
-        Task<string> GenerateCardLetter();
+        Task<string> GenerateCardLetter(int index);
         Task<string> GenerateCardColor();
-        Task<string> GenerateCardIconOrImage();
+        Task<string> GenerateCardIconOrImage(int index);
     }
 }

@@ -13,24 +13,22 @@ namespace BusinessLogic.Services
     /// </summary>
     public class ReturnCardsObjectsService : IReturnCardsObjects
     {
-        private const int TotalNumOfCards = 3;// 52; the standard card number is 52 hard code
+        private const int TotalNumOfCards = 7;// 52; the standard card number is 52 hard code
         public async Task<IEnumerable<CardsInformation>> AllCards()
         {
             var CardsAssign = new List<CardsInformation>();
 
             for (int startCount = 0; startCount < TotalNumOfCards; startCount++)
             {
-                CardsAssign.Add(new CardsInformation { CardNo = startCount + 1, LetterOnCard = await GenerateCardLetter(), CardIconOrImage = await GenerateCardIconOrImage(), IconColor = await GenerateCardColor() });
+                CardsAssign.Add(new CardsInformation { CardNo = startCount + 1, LetterOnCard = await GenerateCardLetter(startCount), CardIconOrImage = await GenerateCardIconOrImage(startCount), IconColor = await GenerateCardColor() });
             }
             return CardsAssign;
         }
 
-        public async Task<string> GenerateCardLetter()
+        public async Task<string> GenerateCardLetter(int index)
         {
-            string[] names = new string[] { "K", "K", "K" };
-            //{ "Q", "K", "K" };// hard code would later uncommented { "A", "2", "3", "4", "5", "6", "7","8", "9", "10", "J", "Q", "K" };
-            Random rnd = new Random();
-            int index = rnd.Next(names.Length);
+            string[] names = new string[] { "K", "Q", "K", "A", "J", "A" };//, "7", "8", "9", "10", "J", "Q", "K" };// { "A", "2", "3", "4", "5", "6", "7","8", "9", "10", "J", "Q", "K" };
+           
             return names[index];
         }
 
@@ -42,11 +40,10 @@ namespace BusinessLogic.Services
             return names[index];
         }
 
-        public async Task<string> GenerateCardIconOrImage()
+        public async Task<string> GenerateCardIconOrImage(int index)
         {
-            string[] names = new string[] { "Queen", "King" };
-            Random rnd = new Random();
-            int index = rnd.Next(names.Length);
+            string[] names = new string[] { "King", "Queen", "King", "A", "J", "A" };
+          
             return names[index];
         }
 
