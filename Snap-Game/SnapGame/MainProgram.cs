@@ -22,7 +22,7 @@ namespace SnapGame
                 //call our DI
                 var serviceProvider = DI.RegisterDI();
 
-                Console.WriteLine("Start playing Snap (card game) by entering nunmber of players: ");
+                Console.WriteLine("Start playing Snap (card game) by entering the number of players: ");
                 int numberOfPlayers = 0;
                 if (int.TryParse(Console.ReadLine(), out numberOfPlayers))
                 {
@@ -36,8 +36,19 @@ namespace SnapGame
                     var playGames = serviceProvider.GetService<IPlayGame>();
                     var returnWinner = await playGames.ReturnWinner(numberOfPlayers);
 
-                    Console.WriteLine($"Game Over!!!!!");
+                    Console.WriteLine($"Rounding up game scores...");
                     Console.WriteLine($"The winner is {returnWinner.PlayerIdentity} with {returnWinner.TotalNumberOfCard} cards");
+
+                    Console.WriteLine($"Enter 1 and press enter to play a new game. To end the game, press any other key and press enter key");
+                    int continueGame = 0;
+                    if (int.TryParse(Console.ReadLine(), out continueGame))
+                    {
+                        if(continueGame == 1)
+                        {
+                            await InvokeGame();
+                        }
+                    }
+
                 }
                 else
                 {

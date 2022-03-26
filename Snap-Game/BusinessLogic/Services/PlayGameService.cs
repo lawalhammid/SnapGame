@@ -12,6 +12,7 @@ namespace BusinessLogic.Services
     public class PlayGameService : IPlayGame
     {
         IReturnCardsObjects _iReturnCardsObjects;
+        private const string NameToDisplayforEachPlayer = "Player";
         public PlayGameService(IReturnCardsObjects iReturnCardsObjects)
         {
             _iReturnCardsObjects = iReturnCardsObjects;
@@ -28,7 +29,7 @@ namespace BusinessLogic.Services
 
                 Players.Add(new Player
                 {
-                    PlayerIdentity = $"PLAYER { 1 + i }"
+                    PlayerIdentity = $"{NameToDisplayforEachPlayer} { 1 + i }"
                 });
             }
 
@@ -38,7 +39,7 @@ namespace BusinessLogic.Services
         //Assign Cards to Players
         public async Task<List<Player>> AssignNoCardsToPlayers(List<Player> Players)
         {
-            Console.WriteLine($"Kindly wait...System is asigning card to all Players \n");
+            Console.WriteLine($"Kindly wait... The system is assigning cards to all Players \n");
 
             var assignNoCardsToPlayers = new List<Player>();
            
@@ -61,7 +62,8 @@ namespace BusinessLogic.Services
                     CardNo = getCardDetails.CardNo,
                     PlayerIdentity = Players[indexOfThePers].PlayerIdentity,
                     CardDetails = getCardDetails != null ? $" Card No { getCardDetails.CardNo } Card Letter: {getCardDetails.LetterOnCard} Card Image: {getCardDetails.CardIconOrImage}" : String.Empty,
-                    LetterOnCard = getCardDetails.LetterOnCard
+                    LetterOnCard = getCardDetails.LetterOnCard,
+                    CardIconOrImage = getCardDetails.CardIconOrImage,
                 });
 
                 // select next player in a clockwise direction
@@ -83,7 +85,7 @@ namespace BusinessLogic.Services
             {
                 if (seperateString != assignNoCardsToPlayer.PlayerIdentity)
                 {
-                    Console.WriteLine($"---- Cards assign to {assignNoCardsToPlayer.PlayerIdentity} are: ----------");
+                    Console.WriteLine($"----Cards assigned to {assignNoCardsToPlayer.PlayerIdentity} and cards remaining for {assignNoCardsToPlayer.PlayerIdentity} to play are:");
                 }
                 seperateString = assignNoCardsToPlayer.PlayerIdentity;
                 //print 
@@ -103,7 +105,8 @@ namespace BusinessLogic.Services
 
             foreach (var getCarddetails in assignNoCardsToPlayers)
             {
-                Console.WriteLine($"{getCarddetails.PlayerIdentity}, Please enter { getCarddetails.CardNo } and press enter key  to reveal the  first card at the top of your cards stack. Note: { getCarddetails.CardNo } is the Card No at the top of your cards stack");
+
+                Console.WriteLine($"{getCarddetails.PlayerIdentity}, Please enter { getCarddetails.CardNo } and press the enter key to reveal the first card at the top of your cards stack. Note: { getCarddetails.CardNo } is the Card No at the top of your cards stack");
 
                 int cardNoTyped = getCarddetails.CardNo;
                
@@ -120,7 +123,9 @@ namespace BusinessLogic.Services
                         
                     }
 
-                    Console.WriteLine($"The Card details you just selected is { getCarddetails.CardDetails }");
+                    //Console.WriteLine($"The Card details you just selected is { getCarddetails.CardDetails }");
+
+                    Console.WriteLine($"The card you selected is Card No. {getCarddetails.CardNo}. The letter on it is {getCarddetails.LetterOnCard}, and its image is {getCarddetails.CardIconOrImage}");
 
                     PlayingPool.Add(new PlayerPool
                     {
